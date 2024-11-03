@@ -1,11 +1,14 @@
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
+ * 
+ * 
  */
 exports.up = async function(knex) {
+
     await knex.schema
     .createTable('merchants', (merchant) => {
-        merchant.increments('merchant_id')
+        merchant.string('merchant_id', 36).primary().notNullable()
         merchant.string('email', 50).notNullable().unique()
         merchant.string('description', 255).notNullable()
         merchant.string('password', 255).notNullable()
@@ -19,6 +22,8 @@ exports.up = async function(knex) {
         merchant.string('address_1', 100).notNullable();
         merchant.string('address_2', 100);
         merchant.string('phone_number', 15);
+        merchant.time('pickup_start_time',  { precision: 4 }).notNullable()
+        merchant.time('pickup_end_time',  { precision: 4 }).notNullable()
         merchant.timestamps(true, true);
     })
 };

@@ -6,7 +6,7 @@ exports.up = async function(knex) {
     await knex.schema
     .createTable('items', (item) => {
         item.increments('item_id');
-        item.integer('merchant_id')
+        item.string('merchant_id')
             .references('merchant_id')
             .inTable('merchants')
             .onDelete('cascade')

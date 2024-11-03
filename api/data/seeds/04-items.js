@@ -16,7 +16,7 @@ exports.seed = async function(knex) {
           price: 800, // $8.00
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
-          merchant_id: 1, // Hammontree’s Grilled Cheese
+          merchant_id: "6ae5cf80-fb76-4215-849e-d06db6478517", // Hammontree’s Grilled Cheese
           item_img: "https://mottainai-app-img.s3.amazonaws.com/grilled-cheese.jpg"
         },
         {
@@ -27,7 +27,7 @@ exports.seed = async function(knex) {
           price: 500, // $5.00
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
-          merchant_id: 2, // Hugo’s
+          merchant_id: "d95a134a-2f8c-4041-82be-10ef6f937484", // Hugo’s
           item_img: "https://mottainai-app-img.s3.amazonaws.com/twice-fried-fries.jpg"
         },
         {
@@ -38,7 +38,7 @@ exports.seed = async function(knex) {
           price: 550, // $5.50
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
-          merchant_id: 4, // Nirvana Indian Cuisine
+          merchant_id: "c7a51f77-9305-44ea-9b74-a8364b59618e", // Nirvana Indian Cuisine
           item_img: "https://mottainai-app-img.s3.amazonaws.com/Garlic-Naan-Bread-2.jpg"
         },
         {
@@ -49,7 +49,7 @@ exports.seed = async function(knex) {
           price: 600, // $6.00
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
-          merchant_id: 1, // Hammontree’s Grilled Cheese
+          merchant_id: "6ae5cf80-fb76-4215-849e-d06db6478517", // Hammontree’s Grilled Cheese
           item_img: "https://mottainai-app-img.s3.amazonaws.com/tomato-basil-soup.jpeg"
         },
         {
@@ -60,7 +60,7 @@ exports.seed = async function(knex) {
           price: 575, // $5.75
           created_at: knex.fn.now(),
           updated_at: knex.fn.now(),
-          merchant_id: 3, // Arsaga’s at the Depot
+          merchant_id: "d9d27075-59e2-4e6f-a478-f61d8f706620", // Arsaga’s at the Depot
           item_img: "https://mottainai-app-img.s3.amazonaws.com/Vegan-Croissants-1.jpg"
         }
       ]);
