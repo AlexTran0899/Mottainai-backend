@@ -1,7 +1,7 @@
 const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
-const Items = require('./items/items-router')
+const Items = require('./items/Items-router')
 const Merchants = require('./merchants/merchants-router')
 
 const server = express()
