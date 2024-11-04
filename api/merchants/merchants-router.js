@@ -13,7 +13,7 @@ router.post('/', (req, res, next) => {
   body.merchant_id = uuidv4()
 
   Merchants.createNewMerchant(body)
-    .then(res => res.json(res))
+    .then(data => res.json(data))
     .catch(next)
 });
 
