@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const Merchants = require('./merchants-model')
+const { v4: uuidv4 } = require('uuid');
 
 router.get('/', (req, res, next) => {
   Merchants.getAll()
@@ -7,10 +8,14 @@ router.get('/', (req, res, next) => {
     .catch(next)
 });
 
-// router.put('/update', (req, res, next) => {
-//   router.update(req.body)
-//     .then(data => res.json(data))
-//     .catch(next)
-// })
+router.post('/', (req, res, next) => {
+  const body = req.body
+  body.merchant_id = uuidv4()
+
+  Merchants.createNewMerchant(body)
+    .then(res => res.json(res))
+    .catch(next)
+});
+
 
 module.exports = router;

@@ -5,7 +5,7 @@
 exports.up = async function(knex) {
     await knex.schema
     .createTable('items', (item) => {
-        item.increments('item_id');
+        item.string('item_id', 36).primary().notNullable();
         item.string('merchant_id')
             .references('merchant_id')
             .inTable('merchants')

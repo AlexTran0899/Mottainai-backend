@@ -2,6 +2,8 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
+
+const { v4: uuidv4 } = require('uuid');
 exports.seed = async function(knex) {
   // Deletes ALL existing entries
   return knex('items').del()
@@ -9,7 +11,7 @@ exports.seed = async function(knex) {
       // Inserts seed entries for excess food items for each restaurant
       return knex('items').insert([
         {
-          item_id: 1,
+          item_id: uuidv4(),
           item_title: 'Grilled Cheese Sandwich',
           item_description: 'Classic grilled cheese sandwich made with a blend of cheeses on sourdough.',
           quantity: 20, // Excess at the end of the night
@@ -20,7 +22,7 @@ exports.seed = async function(knex) {
           item_img: "https://mottainai-app-img.s3.amazonaws.com/grilled-cheese.jpg"
         },
         {
-          item_id: 2,
+          item_id: uuidv4(),
           item_title: 'French Fries',
           item_description: 'A side of golden, crispy french fries.',
           quantity: 30, // Excess at the end of the night
@@ -31,7 +33,7 @@ exports.seed = async function(knex) {
           item_img: "https://mottainai-app-img.s3.amazonaws.com/twice-fried-fries.jpg"
         },
         {
-          item_id: 4,
+          item_id: uuidv4(),
           item_title: 'Garlic Naan',
           item_description: 'Traditional Indian flatbread baked with garlic and butter.',
           quantity: 25, // Excess at the end of the night
@@ -42,7 +44,7 @@ exports.seed = async function(knex) {
           item_img: "https://mottainai-app-img.s3.amazonaws.com/Garlic-Naan-Bread-2.jpg"
         },
         {
-          item_id: 5,
+          item_id: uuidv4(),
           item_title: 'Tomato Basil Soup',
           item_description: 'A creamy soup made with fresh tomatoes and basil.',
           quantity: 10, // Excess at the end of the night
@@ -53,7 +55,7 @@ exports.seed = async function(knex) {
           item_img: "https://mottainai-app-img.s3.amazonaws.com/tomato-basil-soup.jpeg"
         },
         {
-          item_id: 7,
+          item_id: uuidv4(),
           item_title: 'Croissant',
           item_description: 'Freshly baked buttery croissant.',
           quantity: 12, // Excess at the end of the night

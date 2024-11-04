@@ -6,6 +6,11 @@ async function getAll() {
     return await db('merchants').select(merchantDTO);
 }
 
+async function createNewMerchant(merchant) {
+    return await db('merchants').insert(merchant);
+}
+
 module.exports = {
     getAll,
+    createNewMerchant
 }
