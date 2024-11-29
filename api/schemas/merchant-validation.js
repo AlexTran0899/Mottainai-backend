@@ -14,7 +14,7 @@ const merchantSchema = yup.object().shape({
   zipcode: yup.string().min(5).max(10).required("Zipcode is required."),
   address_1: yup.string().min(5).max(100).required("Address 1 is required."),
   address_2: yup.string().min(5).max(100), // Optional
-  phone_number: yup.string().min(10).max(15), // Optional
+  phone_number: yup.string().min(10).max(15).required("Phone number is required"), // Optional
   pickup_start_time: yup.string().required("Pickup start time is required."),
   pickup_end_time: yup.string().required("Pickup end time is required."),
 });
