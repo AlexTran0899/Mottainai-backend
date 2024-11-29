@@ -21,7 +21,7 @@ exports.up = async function(knex) {
         merchant.string('zipcode', 10).notNullable();
         merchant.string('address_1', 100).notNullable();
         merchant.string('address_2', 100);
-        merchant.string('phone_number', 15);
+        merchant.string('phone_number', 15).notNullable();
         merchant.time('pickup_start_time',  { precision: 4 }).notNullable()
         merchant.time('pickup_end_time',  { precision: 4 }).notNullable()
         merchant.timestamps(true, true);
