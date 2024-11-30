@@ -50,6 +50,7 @@ router.post('/register', validateMerchant, checkMerchantUnique, (req, res, next)
   // Add merchant to database
   Merchants.createNewMerchant(merchant)
     .then(data => {
+      console.log("data", data)
       const token = tokenBuilderMerchant(data);
       res.status(201).json({
         merchant_id: data.merchant_id,

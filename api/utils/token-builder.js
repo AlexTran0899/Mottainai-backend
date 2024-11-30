@@ -2,7 +2,6 @@ const jwt = require( 'jsonwebtoken')
 const {JWT_SECRET} = require('./secret')
 
 function tokenBuilderMerchant(merchant){
-    console.log(merchant)
     const payload = {
         merchant_id: merchant.merchant_id,
         email: merchant.email,

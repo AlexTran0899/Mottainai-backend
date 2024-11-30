@@ -7,7 +7,8 @@ async function getAll() {
 }
 
 async function createNewMerchant(merchant) {
-    return await db('merchants').insert(merchant);
+    const [newMerchant] = await db('merchants').insert(merchant, ['email', 'merchant_id'])
+    return newMerchant
 }
 
 async function findBy(filter) {
