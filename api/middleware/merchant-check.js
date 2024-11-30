@@ -15,6 +15,16 @@ async function validateMerchant(req, res, next) {
   }
 }
 
+async function validateLoginPayload(req, res, next) {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return res.status(400).json({ message: 'Email and password are required' });
+  }
+
+  next(); 
+}
+
 async function checkMerchantUnique(req, res, next) {
   const { email, shop_name } = req.body;
 
@@ -36,5 +46,6 @@ async function checkMerchantUnique(req, res, next) {
 
 module.exports = {
     validateMerchant,
-    checkMerchantUnique
+    checkMerchantUnique,
+    validateLoginPayload,
 };

@@ -1,10 +1,11 @@
 const jwt = require( 'jsonwebtoken')
 const {JWT_SECRET} = require('./secret')
 
-function tokenBuilder(user){
+function tokenBuilderMerchant(merchant){
+    console.log(merchant)
     const payload = {
-        subject: user.user_id,
-        username: user.username,
+        merchant_id: merchant.merchant_id,
+        email: merchant.email,
     };
     const options = {
         expiresIn: '1d',
@@ -17,4 +18,6 @@ function tokenBuilder(user){
     return token;
 }
 
-module.exports = tokenBuilder
+module.exports = {
+    tokenBuilderMerchant
+}
