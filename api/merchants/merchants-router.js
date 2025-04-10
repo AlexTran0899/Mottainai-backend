@@ -67,7 +67,6 @@ router.get('/', restricted, (req, res, next) => {
     .then(items => res.json(items))
     .catch(next)
 });
-})
 
 
 
