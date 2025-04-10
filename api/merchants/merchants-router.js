@@ -62,7 +62,7 @@ router.post('/register', validateMerchant, checkMerchantUnique, (req, res, next)
     .catch(next);
 });
 
-router.get('/', restricted, (req, res, next) => {
+router.get('/', (req, res, next) => {
   Merchants.getAll()
     .then(items => res.json(items))
     .catch(next)
