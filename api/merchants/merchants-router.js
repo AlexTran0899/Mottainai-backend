@@ -63,7 +63,10 @@ router.post('/register', validateMerchant, checkMerchantUnique, (req, res, next)
 });
 
 router.get('/', restricted, (req, res, next) => {
-  res.json(req.decodedJwt)
+  Merchants.getAll()
+    .then(items => res.json(items))
+    .catch(next)
+});
 })
 
 
